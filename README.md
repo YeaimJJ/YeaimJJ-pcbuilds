@@ -9,6 +9,7 @@ Static storefront and service site for JJSPCBuilds. The site is deployable to an
 3. The production public API key is configured in `snipcart.js` and the page containers. It is intentionally client-side; never add a private key, webhook secret, or payment credential to this repository.
 4. Deploy the site over HTTPS and open the storefront once so Snipcart can validate the domain.
 5. In the Snipcart dashboard, configure payment providers, taxes, shipping/pickup rules, order emails, and inventory before accepting orders. Adding the loader and buttons alone does not enable checkout.
+6. Add `jjspcbuilds.com` as the production domain in Snipcart's dashboard/domain settings before accepting live orders.
 
 Products live in the `#shop` and `#builds` sections of `index.html` and `Builds.html`. Keep the same stable IDs in both surfaces. Every sellable item must provide `data-item-price`, `data-item-url`, `data-item-description`, `data-item-image`, and `data-item-name` on its `.snipcart-add-item` button. Use `disabled` and an explicit sold-out label for unavailable inventory.
 
