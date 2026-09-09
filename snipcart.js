@@ -1,6 +1,6 @@
 /*
  * Snipcart storefront bootstrap.
- * Replace the placeholder with the public key from the Snipcart dashboard.
+ * Production public key is configured below from the Snipcart dashboard.
  * Never put a private/payment secret in this file.
  */
 (function loadSnipcart() {
