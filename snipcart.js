@@ -4,7 +4,7 @@
  * Never put a private/payment secret in this file.
  */
 (function loadSnipcart() {
-    const publicKey = "YOUR-SNIPCART-PUBLIC-KEY";
+    const publicKey = "MjFiNjU1MmEtYjQzNC00NDJmLWJlYjgtNzJmYjIxZGIxMmVmNjM5MjQ0NDk5MzcyNTYxMTY1";
     const container = document.getElementById("snipcart");
     if (!container) return;
 
