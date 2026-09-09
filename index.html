@@ -1110,6 +1110,84 @@
             .quiz-options { grid-template-columns: 1fr; }
             .tradein-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
+
+        /* Storefront refresh */
+        .shop-hero {
+            padding-top: 3rem;
+            background: linear-gradient(180deg, rgba(255,255,255,.025), transparent);
+            border-top: 1px solid var(--border);
+        }
+        .shop-kicker {
+            color: var(--text-secondary);
+            font-size: .8rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .shop-heading-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            align-items: end;
+            margin-bottom: 2rem;
+        }
+        .shop-heading-row p { color: var(--text-secondary); max-width: 430px; margin: 0; }
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+        .shop-card {
+            background: #151b2b;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            transition: transform .2s ease, border-color .2s ease;
+        }
+        .shop-card:hover { transform: translateY(-4px); border-color: rgba(167,139,250,.6); }
+        .shop-card-art {
+            min-height: 170px;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(circle at 50% 40%, rgba(124,131,255,.4), transparent 48%), #0d1324;
+            font-size: 4rem;
+        }
+        .shop-card-body { padding: 1.15rem; display: flex; flex-direction: column; gap: .65rem; flex: 1; }
+        .shop-card-label { color: var(--brand-strong); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+        .shop-card h3 { font-size: 1.05rem; margin: 0; }
+        .shop-card p { color: var(--text-secondary); font-size: .86rem; margin: 0; }
+        .shop-card-price { font-size: 1.2rem; font-weight: 800; margin-top: auto; }
+        .shop-card .btn { width: 100%; justify-content: center; margin-top: .3rem; }
+        .shop-note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: .82rem;
+            margin-top: 1.25rem;
+        }
+        .review-strip {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .review-card {
+            background: rgba(255,255,255,.035);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.4rem;
+        }
+        .review-stars { color: #fbbf24; letter-spacing: .12em; }
+        .review-card blockquote { margin: .8rem 0 1rem; color: var(--text-primary); font-size: .94rem; }
+        .review-card cite { color: var(--text-secondary); font-size: .8rem; font-style: normal; }
+        @media(max-width:950px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(max-width:650px) {
+            .shop-heading-row { display: block; }
+            .shop-heading-row p { margin-top: .75rem; }
+            .shop-grid, .review-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1127,6 +1205,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#builds">Builds</a></li>
+                <li><a href="#shop">Shop</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#quote">Get Quote</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1150,6 +1229,72 @@
                 <a href="https://calendly.com/jjspcbuilds/30min" target="_blank" class="btn btn-secondary">📅 Book a Free Consult</a>
             </div>
         </div>
+    </section>
+
+    <!-- Product-first storefront -->
+    <section class="shop-hero" id="shop" aria-labelledby="shop-heading">
+        <div class="shop-heading-row">
+            <div>
+                <div class="shop-kicker">Ready-to-run systems</div>
+                <h2 id="shop-heading">Pick your next <span>GPU-powered build</span></h2>
+            </div>
+            <p>Tested parts, clean assembly, and a straightforward path from browsing to checkout. Local pickup and custom options are available.</p>
+        </div>
+        <div class="shop-grid">
+            <article class="shop-card">
+                <div class="shop-card-art" aria-hidden="true">🖥️</div>
+                <div class="shop-card-body">
+                    <div class="shop-card-label">1080p performance</div>
+                    <h3>RTX 4060 Starter Rig</h3>
+                    <p>Ryzen 5 5600 · 16GB DDR4 · 1TB NVMe</p>
+                    <div class="shop-card-price">$850</div>
+                    <button class="btn btn-primary snipcart-add-item"
+                        data-item-id="entry-level-gaming"
+                        data-item-price="850"
+                        data-item-url="index.html#entry-level-gaming"
+                        data-item-description="Entry-level gaming PC with Ryzen 5 5600, RTX 4060 or RX 7600, 16GB RAM, and 1TB NVMe SSD."
+                        data-item-image="assets/images/pc-build-placeholder.svg"
+                        data-item-name="RTX 4060 Starter Rig">Add to cart</button>
+                </div>
+            </article>
+            <article class="shop-card">
+                <div class="shop-card-art" aria-hidden="true">🎮</div>
+                <div class="shop-card-body">
+                    <div class="shop-card-label">Best seller</div>
+                    <h3>RTX 5070 Sweet Spot</h3>
+                    <p>Ryzen 7 7800X3D · 32GB DDR5 · 2TB NVMe</p>
+                    <div class="shop-card-price">$1,500</div>
+                    <button class="btn btn-primary snipcart-add-item"
+                        data-item-id="sweet-spot-gaming"
+                        data-item-price="1500"
+                        data-item-url="index.html#sweet-spot-gaming"
+                        data-item-description="Sweet-spot gaming PC with Ryzen 7 7800X3D, RTX 5070 or RX 7800 XT, 32GB DDR5, and 2TB NVMe storage."
+                        data-item-image="assets/images/pc-build-placeholder.svg"
+                        data-item-name="RTX 5070 Sweet Spot">Add to cart</button>
+                </div>
+            </article>
+            <article class="shop-card">
+                <div class="shop-card-art" aria-hidden="true">💎</div>
+                <div class="shop-card-body">
+                    <div class="shop-card-label">Coming soon</div>
+                    <h3>RTX 5080 4K Beast</h3>
+                    <p>Core i7-14700K · 32GB DDR5 · 4K-ready cooling</p>
+                    <div class="shop-card-price">$2,800</div>
+                    <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Sold out</button>
+                </div>
+            </article>
+            <article class="shop-card">
+                <div class="shop-card-art" aria-hidden="true">🎬</div>
+                <div class="shop-card-body">
+                    <div class="shop-card-label">Creator workstation</div>
+                    <h3>RTX 4070 Ti Creator</h3>
+                    <p>Ryzen 9 7900X · 64GB DDR5 · 4TB NVMe</p>
+                    <div class="shop-card-price">$2,200</div>
+                    <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Sold out</button>
+                </div>
+            </article>
+        </div>
+        <p class="shop-note">Every order includes assembly testing and a clear handoff. Need a different GPU? <a href="#quote">Request a custom quote.</a></p>
     </section>
 
     <!-- Pricing Section -->
@@ -1668,6 +1813,31 @@
                 <h3>Quote Request Sent!</h3>
                 <p>I'll review your inquiry and get back to you within 24 hours with a personalized parts list and quote.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Customer proof -->
+    <section class="review-strip" aria-labelledby="reviews-heading">
+        <div class="section-header">
+            <h2 id="reviews-heading">Built for real <span>setups</span></h2>
+            <p>Clear communication, careful builds, and support after pickup.</p>
+        </div>
+        <div class="review-grid">
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>“The parts list made sense, the build was clean, and I knew exactly what I was paying for.”</blockquote>
+                <cite>— Local gaming client</cite>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>“Fast answers and a smooth pickup. My games are running exactly how I wanted.”</blockquote>
+                <cite>— San Antonio customer</cite>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>“I got a practical recommendation instead of being pushed into parts I did not need.”</blockquote>
+                <cite>— Custom build customer</cite>
+            </article>
         </div>
     </section>
 
