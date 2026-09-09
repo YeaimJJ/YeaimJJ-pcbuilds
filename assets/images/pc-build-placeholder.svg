@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title">
+  <title>JJSPCBuilds custom PC</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop stop-color="#313a75"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#bg)"/>
+  <rect x="275" y="85" width="250" height="330" rx="18" fill="#111827" stroke="#c4b5fd" stroke-width="8"/>
+  <circle cx="400" cy="210" r="72" fill="#4f46e5" opacity=".8"/>
+  <circle cx="400" cy="210" r="36" fill="#a78bfa"/>
+  <path d="M330 335h140" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+</svg>

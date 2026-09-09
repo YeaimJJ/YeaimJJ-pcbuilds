@@ -86,6 +86,16 @@
             color: var(--text-primary);
         }
 
+        .cart-link {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.45rem 0.8rem;
+            font: inherit;
+            cursor: pointer;
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -1120,6 +1130,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#quote">Get Quote</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button class="cart-link snipcart-checkout" type="button" aria-label="Open shopping cart">Cart <span class="snipcart-items-count">0</span></button></li>
             </ul>
             <button class="mobile-menu-btn">☰</button>
         </div>
@@ -1380,7 +1391,7 @@
             <p>Real PCs I've built for clients. Prices include assembly service.</p>
         </div>
         <div class="builds-grid">
-            <div class="build-card">
+            <div class="build-card" id="entry-level-gaming">
                 <div class="build-image">🖥️
                     <span class="build-badge">Gaming</span>
                 </div>
@@ -1394,9 +1405,16 @@
                         <li>1TB NVMe SSD</li>
                         <li>1080p High Settings</li>
                     </ul>
+                    <button class="btn btn-primary snipcart-add-item"
+                        data-item-id="entry-level-gaming"
+                        data-item-price="850"
+                        data-item-url="index.html#entry-level-gaming"
+                        data-item-description="Entry-level gaming PC with Ryzen 5 5600, RTX 4060 or RX 7600, 16GB RAM, and 1TB NVMe SSD."
+                        data-item-image="assets/images/pc-build-placeholder.svg"
+                        data-item-name="Entry Level Gaming PC">Add to cart</button>
                 </div>
             </div>
-            <div class="build-card">
+            <div class="build-card" id="sweet-spot-gaming">
                 <div class="build-image">🎮
                     <span class="build-badge">Popular</span>
                 </div>
@@ -1410,6 +1428,13 @@
                         <li>2TB NVMe Gen4 SSD</li>
                         <li>1440p Ultra Settings</li>
                     </ul>
+                    <button class="btn btn-primary snipcart-add-item"
+                        data-item-id="sweet-spot-gaming"
+                        data-item-price="1500"
+                        data-item-url="index.html#sweet-spot-gaming"
+                        data-item-description="Sweet-spot gaming PC with Ryzen 7 7800X3D, RTX 5070 or RX 7800 XT, 32GB DDR5, and 2TB NVMe storage."
+                        data-item-image="assets/images/pc-build-placeholder.svg"
+                        data-item-name="Sweet Spot Gaming PC">Add to cart</button>
                 </div>
             </div>
             <div class="build-card">
@@ -1426,6 +1451,8 @@
                         <li>2TB NVMe Gen4 + 4TB HDD</li>
                         <li>4K High/Ultra Settings</li>
                     </ul>
+                    <span class="availability sold-out">Currently sold out</span>
+                    <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Sold out</button>
                 </div>
             </div>
             <div class="build-card">
@@ -1442,6 +1469,8 @@
                         <li>4TB NVMe Storage</li>
                         <li>Video Editing/3D Render</li>
                     </ul>
+                    <span class="availability sold-out">Currently sold out</span>
+                    <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Sold out</button>
                 </div>
             </div>
         </div>
@@ -1842,6 +1871,8 @@
             });
         });
     </script>
+    <div hidden id="snipcart" data-api-key="YOUR-SNIPCART-PUBLIC-KEY" data-config-modal-style="side"></div>
+    <script src="snipcart.js"></script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
