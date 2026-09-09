@@ -1210,6 +1210,7 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#builds">Builds</a></li>
                 <li><a href="#shop">Shop</a></li>
+                <li><a href="#configurator">Configure</a></li>
                 <li><a href="#reviews-heading">Reviews</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#quote">Get Quote</a></li>
@@ -1624,6 +1625,40 @@
 
     <!-- Example Builds -->
 
+    <!-- Build Configurator -->
+    <section class="configurator" id="configurator" aria-labelledby="configurator-heading">
+        <div class="section-header">
+            <div class="shop-kicker">Build your starting point</div>
+            <h2 id="configurator-heading">Configure a <span>custom direction</span></h2>
+            <p>Choose parts to get a live, customer-facing estimate. This is a quote tool, not a direct Snipcart product; availability and final shipping/payment fees are confirmed with your quote.</p>
+        </div>
+        <div class="configurator-grid">
+            <form class="configurator-panel" id="buildConfigurator">
+                <fieldset>
+                    <legend>Graphics platform</legend>
+                    <div class="configurator-options">
+                        <label class="configurator-option"><input type="radio" name="gpuBrand" value="nvidia" checked><strong>NVIDIA</strong><span>GeForce RTX options</span></label>
+                        <label class="configurator-option"><input type="radio" name="gpuBrand" value="radeon"><strong>Radeon</strong><span>AMD Radeon RX options</span></label>
+                    </div>
+                </fieldset>
+                <div class="configurator-select"><label for="gpuTier">GPU tier</label><select id="gpuTier" name="gpuTier"></select></div>
+                <div class="configurator-select"><label for="cpuTier">CPU</label><select id="cpuTier" name="cpuTier"><option value="7600x">Ryzen 5 7600X — $199</option><option value="9800x3d">Ryzen 7 9800X3D — $469</option><option value="threadripper">Threadripper 7960X — $1,120</option></select></div>
+                <div class="configurator-select"><label for="ramTier">Memory</label><select id="ramTier" name="ramTier"><option value="16gb">16GB DDR5 — $266</option><option value="32gb">32GB DDR5 — $500</option><option value="64gb">64GB DDR5 — $825</option><option value="128gb">128GB ECC RDIMM — $3,980</option></select></div>
+                <div class="configurator-select"><label for="storageTier">Storage</label><select id="storageTier" name="storageTier"><option value="1tb">1TB NVMe — $157</option><option value="2tb">2TB NVMe — $320</option><option value="4tb">4TB NVMe — $445</option></select></div>
+                <div class="configurator-select"><label for="coolingTier">Cooling</label><select id="coolingTier" name="coolingTier"><option value="air">Air cooler — $45</option><option value="240aio">240mm liquid cooler — $80</option><option value="threadripper">Threadripper cooler — $165</option></select></div>
+                <div class="configurator-select"><label for="caseTier">Case & power</label><select id="caseTier" name="caseTier"><option value="airflow">Airflow case + 650W PSU — $130</option><option value="balanced">Airflow case + 850W PSU — $160</option><option value="premium">Premium case + 1200W PSU — $310</option></select></div>
+                <div class="configurator-select"><label for="setupTier">OS & setup</label><select id="setupTier" name="setupTier"><option value="self">Customer OS/setup — $0</option><option value="standard">OS install + setup — $100</option></select></div>
+            </form>
+            <aside class="configurator-summary" aria-live="polite">
+                <div class="shop-card-label">Estimated customer total</div>
+                <div class="configurator-total" id="configTotal">$0</div>
+                <p class="configurator-summary-note">Parts estimate plus 20% markup. Shipping, tax, payment fees, and final availability are confirmed separately.</p>
+                <ul class="configurator-breakdown" id="configBreakdown"></ul>
+                <a class="btn btn-primary configurator-cta" id="configQuoteLink" href="#quote">Request this configuration</a>
+            </aside>
+        </div>
+    </section>
+
     <!-- Find My Perfect PC Quiz -->
     <section id="quiz" style="background:linear-gradient(180deg,rgba(99,102,241,0.04),transparent);">
         <div class="section-header">
@@ -1750,6 +1785,7 @@
         <div class="quote-form-container">
             <form id="quoteForm" action="https://formspree.io/f/maqldgaw" method="POST" novalidate>
                 <input type="hidden" name="_subject" value="New Inquiry — JJ's PC Builds">
+                <input type="hidden" id="configSummary" name="configuration">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
@@ -1919,6 +1955,62 @@
     </footer>
 
     <script>
+        // Quote-only build configurator. Prices are editable planning inputs, not Snipcart products.
+        const configuratorOptions = {
+            nvidia: [
+                { value: 'rtx5060', label: 'GeForce RTX 5060 — $400', price: 400 },
+                { value: 'rtx5070', label: 'GeForce RTX 5070 — $650', price: 650 },
+                { value: 'rtx5090', label: 'GeForce RTX 5090 — $5,500', price: 5500 }
+            ],
+            radeon: [
+                { value: 'rx7600', label: 'Radeon RX 7600 — $340', price: 340 },
+                { value: 'rx9070xt', label: 'Radeon RX 9070 XT — $730', price: 730 },
+                { value: 'rx7900xtx', label: 'Radeon RX 7900 XTX — $900', price: 900 }
+            ]
+        };
+        const configMarkup = 1.2;
+        const configLabels = {
+            cpuTier: 'CPU', ramTier: 'Memory', storageTier: 'Storage',
+            coolingTier: 'Cooling', caseTier: 'Case & power', setupTier: 'OS & setup'
+        };
+        const configMoney = value => '$' + Math.round(value).toLocaleString('en-US');
+        function updateConfigurator() {
+            const form = document.getElementById('buildConfigurator');
+            if (!form) return;
+            const brand = form.querySelector('input[name="gpuBrand"]:checked').value;
+            const gpu = document.getElementById('gpuTier');
+            const currentGpu = gpu.value;
+            gpu.innerHTML = configuratorOptions[brand].map(option =>
+                `<option value="${option.value}" data-price="${option.price}">${option.label}</option>`
+            ).join('');
+            if ([...gpu.options].some(option => option.value === currentGpu)) gpu.value = currentGpu;
+            const selected = [gpu, ...Object.keys(configLabels).map(id => document.getElementById(id))];
+            const parts = selected.map(select => ({
+                label: select === gpu ? 'GPU' : configLabels[select.id],
+                name: select.options[select.selectedIndex].textContent.split(' — ')[0],
+                price: (() => {
+                    const option = select.options[select.selectedIndex];
+                    if (option.dataset.price) return Number(option.dataset.price);
+                    if (option.value === 'self') return 0;
+                    return Number(option.textContent.replace(/[^0-9]/g, ''));
+                })()
+            }));
+            const partsTotal = parts.reduce((total, part) => total + part.price, 0);
+            const total = partsTotal * configMarkup;
+            document.getElementById('configTotal').textContent = configMoney(total);
+            document.getElementById('configBreakdown').innerHTML = parts.map(part =>
+                `<li><span>${part.label}</span><strong>${part.name}</strong></li>`
+            ).join('');
+            const summary = `Configured ${brand === 'nvidia' ? 'NVIDIA' : 'Radeon'} build: ${parts.map(part => part.name).join(', ')}. Estimated customer total: ${configMoney(total)} before shipping, tax, and payment fees.`;
+            const hidden = document.getElementById('configSummary');
+            if (hidden) hidden.value = summary;
+            const quoteLink = document.getElementById('configQuoteLink');
+            if (quoteLink) quoteLink.addEventListener('click', () => { if (hidden) hidden.value = summary; }, { once: true });
+        }
+        document.querySelectorAll('#buildConfigurator input, #buildConfigurator select').forEach(control => control.addEventListener('change', updateConfigurator));
+        document.querySelectorAll('input[name="gpuBrand"]').forEach(control => control.addEventListener('change', updateConfigurator));
+        updateConfigurator();
+
         // Build filter
         function filterBuilds(tier, btn) {
             document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
