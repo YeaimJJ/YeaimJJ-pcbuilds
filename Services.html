@@ -1,47 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - JJ's PC Builds</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | JJSPCBuilds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to JJ's PC Builds</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="services.html">Services</a> |
-            <a href="builds.html">Build Gallery</a> |
-            <a href="pricing.html">Pricing</a> |
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service">
-            <h3>Assembly</h3>
-            <p>We build custom PCs to your specifications.</p>
-        </div>
-        <div class="service">
-            <h3>Troubleshooting & Repair</h3>
-            <p>Fix any issues with your current PC setup.</p>
-        </div>
-        <div class="service">
-            <h3>Diagnostics</h3>
-            <p>Run comprehensive tests to identify hardware issues.</p>
-        </div>
-        <div class="service">
-            <h3>Upgrades</h3>
-            <p>Upgrade your existing PC with the latest components.</p>
-        </div>
-        <div class="service">
-            <h3>Custom Designs</h3>
-            <p>Create unique builds tailored to your needs.</p>
-        </div>
-    </section>
-
-    <script src="scripts.js"></script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="site-header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">⚡</span>JJSPCBuilds</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a><a href="Services.html">Services</a><a href="Builds.html">Build gallery</a><a href="Pricing.html">Pricing</a><a href="Contact.html">Contact</a>
+      <button class="cart-link snipcart-checkout" type="button">Cart <span class="snipcart-items-count">0</span></button>
+    </nav>
+  </div></header>
+  <main id="main">
+    <header class="page-hero"><div class="eyebrow">Hands-on support</div><h1>Services that keep your setup moving.</h1><p class="lede">From first diagnosis to final cable check, JJSPCBuilds makes PC help straightforward and transparent.</p></header>
+    <section class="section"><div class="card-grid">
+      <article class="card"><h2>🔧 Assembly</h2><p>Custom PC assembly with careful cable management, POST testing, and OS setup.</p></article>
+      <article class="card"><h2>🛠️ Troubleshooting & Repair</h2><p>Fix fan noise, RGB issues, BIOS problems, drivers, malware, and hardware swaps.</p></article>
+      <article class="card"><h2>🔍 Diagnostics</h2><p>Comprehensive testing to identify what is wrong before any repair moves forward.</p></article>
+      <article class="card"><h2>⚡ Upgrades</h2><p>Upgrade your existing PC with current components matched to your goals and budget.</p></article>
+      <article class="card"><h2>🎨 Custom Designs</h2><p>Build a unique system around your games, creative workflow, or workspace.</p></article>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><span>Local PC builder · San Antonio, TX</span><a href="Contact.html">Request a quote →</a></div></footer>
+  <div hidden id="snipcart" data-api-key="YOUR-SNIPCART-PUBLIC-KEY" data-config-modal-style="side"></div><script src="snipcart.js"></script><script src="scripts.js"></script>
 </body>
 </html>
