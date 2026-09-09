@@ -6,7 +6,7 @@ Static storefront and service site for JJSPCBuilds. The site is deployable to an
 
 1. Create a Snipcart account and add the production domain in the Snipcart dashboard.
 2. Copy the **public API key** from the dashboard.
-3. In `snipcart.js`, replace `YOUR-SNIPCART-PUBLIC-KEY` with that public key. The key is intentionally client-side; never add a private key, webhook secret, or payment credential to this repository.
+3. The production public API key is configured in `snipcart.js` and the page containers. It is intentionally client-side; never add a private key, webhook secret, or payment credential to this repository.
 4. Deploy the site over HTTPS and open the storefront once so Snipcart can validate the domain.
 5. In the Snipcart dashboard, configure payment providers, taxes, shipping/pickup rules, order emails, and inventory before accepting orders. Adding the loader and buttons alone does not enable checkout.
 
