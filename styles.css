@@ -48,6 +48,17 @@ a { color: inherit; }
     letter-spacing: -.03em;
     font-size: 1.1rem;
 }
+.brand-logo {
+    display: block;
+    width: 76px;
+    height: 46px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: .55rem;
+    background: #fff;
+    padding: .15rem;
+}
+.footer-brand-logo { width: 96px; height: 58px; margin: 0 auto 1rem; }
 .brand-mark { color: var(--brand-strong); margin-right: .35rem; }
 .site-nav { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
 .site-nav a { color: var(--muted); text-decoration: none; font-size: .92rem; }
