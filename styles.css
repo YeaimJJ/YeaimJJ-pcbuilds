@@ -135,3 +135,109 @@ textarea { min-height: 140px; resize: vertical; }
     .page-hero { padding-top: 4rem; }
     .card-grid { grid-template-columns: 1fr; }
 }
+
+/* Homepage storefront layer. Loaded after the legacy inline theme so the
+   production homepage and secondary pages share the same visual system. */
+body {
+    background:
+        radial-gradient(circle at 85% 0%, rgba(124, 131, 255, .2), transparent 34rem),
+        radial-gradient(circle at 0% 35%, rgba(167, 139, 250, .08), transparent 28rem),
+        #0b1020;
+}
+nav {
+    background: rgba(11, 16, 32, .88) !important;
+    border-bottom-color: rgba(255,255,255,.1) !important;
+    padding: .85rem 0 !important;
+}
+.nav-container { max-width: var(--max-width); }
+.logo {
+    font-size: 1.15rem;
+    letter-spacing: -.03em;
+}
+.nav-links { gap: 1.05rem; align-items: center; }
+.nav-links a {
+    color: var(--muted);
+    font-size: .86rem;
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+.cart-link {
+    color: var(--ink) !important;
+    background: rgba(124,131,255,.14);
+    border-color: rgba(167,139,250,.45);
+    font: inherit;
+    font-weight: 700;
+}
+.hero {
+    min-height: 76vh;
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    background:
+        linear-gradient(180deg, rgba(11,16,32,.15), rgba(11,16,32,.9)),
+        radial-gradient(circle at 50% 30%, rgba(124,131,255,.18), transparent 32rem);
+}
+.hero-content { max-width: 900px; text-align: left; }
+.hero-badge {
+    border-color: rgba(167,139,250,.42);
+    background: rgba(124,131,255,.1);
+    color: var(--brand-strong);
+}
+.hero h1 { max-width: 800px; font-size: clamp(3rem, 7vw, 6.2rem); }
+.hero-subtitle { max-width: 630px; color: var(--muted); font-size: 1.08rem; }
+.hero-buttons { justify-content: flex-start; }
+.btn {
+    border-radius: .7rem;
+    box-shadow: none;
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+}
+.btn-secondary {
+    border-color: rgba(255,255,255,.18);
+    background: rgba(255,255,255,.035);
+}
+.shop-hero {
+    max-width: var(--max-width);
+    padding: 5rem 2rem;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 1.4rem;
+    background: rgba(18,24,42,.58);
+}
+.shop-heading-row h2 { max-width: 540px; }
+.shop-heading-row h2 span { color: var(--brand-strong); }
+.shop-card {
+    background: rgba(13,19,36,.9);
+    border-color: rgba(255,255,255,.1);
+    border-radius: 1rem;
+}
+.shop-card-art {
+    min-height: 190px;
+    background:
+        linear-gradient(145deg, rgba(124,131,255,.22), rgba(167,139,250,.04)),
+        #0d1324;
+}
+.shop-card-body { padding: 1.25rem; }
+.shop-card h3 { font-size: 1.12rem; }
+.shop-card-price { color: var(--brand-strong); }
+.shop-card .btn { padding: .78rem 1rem; }
+.shop-note a { color: var(--brand-strong); }
+.review-strip {
+    max-width: var(--max-width);
+    padding: 5rem 2rem;
+}
+.review-strip .section-header { margin-bottom: 2rem; }
+.review-card {
+    background: rgba(18,24,42,.7);
+    border-color: rgba(255,255,255,.1);
+}
+.review-card blockquote { line-height: 1.6; }
+@media (max-width: 800px) {
+    .nav-links {
+        width: 100%;
+        display: none;
+    }
+    .nav-links.active { display: flex; }
+    .hero { min-height: auto; padding-top: 7rem; }
+    .hero-content { text-align: center; }
+    .hero-buttons { justify-content: center; }
+    .shop-hero, .review-strip { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
