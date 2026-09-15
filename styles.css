@@ -305,3 +305,89 @@ nav .nav-container {
     nav .nav-container { width: calc(100% - 1.25rem); }
     .brand-logo, .logo.brand-logo { width: 52px; height: 32px; max-width: 52px; max-height: 32px; }
 }
+
+/* Final mobile pass for the homepage's legacy inline theme. */
+@media (max-width: 600px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .site-header-inner, nav .nav-container {
+        width: calc(100% - 1rem);
+        min-height: 58px;
+        padding-top: .65rem;
+        padding-bottom: .65rem;
+    }
+    .nav-container { flex-wrap: wrap; }
+    .mobile-menu-btn {
+        display: block !important;
+        margin-left: auto;
+        padding: .35rem .55rem;
+        border: 1px solid var(--line);
+        border-radius: .55rem;
+        background: rgba(255,255,255,.05);
+        color: var(--ink);
+        line-height: 1;
+    }
+    .nav-links {
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: .15rem;
+        padding: .65rem 0 0;
+        margin: 0;
+    }
+    .nav-links:not(.active) { display: none; }
+    .nav-links.active { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a, .nav-links .cart-link {
+        display: block;
+        width: 100%;
+        padding: .65rem .75rem;
+        text-align: left;
+    }
+    .hero {
+        min-height: auto;
+        padding: 6.5rem .85rem 3rem;
+    }
+    .hero-content { width: 100%; }
+    .hero h1 {
+        font-size: clamp(2.15rem, 12vw, 3.3rem);
+        overflow-wrap: anywhere;
+    }
+    .hero-subtitle { font-size: .98rem; }
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-buttons .btn { width: 100%; }
+    section, .configurator, .review-strip, .shop-hero {
+        width: 100%;
+        padding: 3rem .85rem;
+    }
+    .section-header h2, .shop-heading-row h2 {
+        font-size: clamp(1.7rem, 9vw, 2.35rem);
+        overflow-wrap: anywhere;
+    }
+    .shop-heading-row { margin-bottom: 1.35rem; }
+    .shop-grid, .review-grid, .services-grid, .builds-grid, .gallery-grid, .pricing-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .shop-card-art, .product-art { min-height: 130px; }
+    .shop-card-body, .card, .quote-form-container, .quiz-container { padding: 1rem; }
+    .product-meta, .pricing-row { flex-direction: column; gap: .35rem; }
+    .product-price, .pricing-price { align-self: flex-start; }
+    .configurator-panel, .configurator-summary { padding: 1rem; }
+    .configurator-total { font-size: 1.9rem; }
+    .configurator-breakdown li {
+        flex-direction: column;
+        gap: .2rem;
+    }
+    .form-row { grid-template-columns: 1fr !important; }
+    input, textarea, select, button { max-width: 100%; }
+    .newsletter-form { width: 100%; }
+    .newsletter-form input { min-width: 0; width: 100%; }
+    .contact-links { flex-direction: column; align-items: stretch; }
+    .contact-link { justify-content: center; }
+    .gallery-item, .gallery-card { min-height: 220px; }
+    video, img { max-width: 100%; }
+}
