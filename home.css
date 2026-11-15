@@ -292,3 +292,5 @@ input[type="range"] { width: 100%; accent-color: var(--primary); margin-top: 0.4
 [data-fs-success] { display: none; }
 [data-fs-success][data-fs-active] { display: block; }
 form:has(+ [data-fs-success][data-fs-active]) { display: none; }
+/* Formspree gives the success box a light green background, so use dark text on it */
+.success-box[data-fs-active] p { color: inherit; }
