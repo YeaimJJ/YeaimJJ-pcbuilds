@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Gaming PCs | JJSPCBuilds</title>
+    <meta name="description" content="Affordable gaming PCs from $500, built from tested parts in San Antonio, TX. Free local pickup or $99 insured shipping, with a 7-day warranty.">
+    <link rel="icon" href="assets/brand/jj-builds-logo.png?v=3">
+    <meta property="og:title" content="Shop Gaming PCs | JJSPCBuilds">
+    <meta property="og:image" content="assets/brand/jj-builds-logo.png?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css?v=4">
+</head>
+<body>
+    <div class="announce">Free local pickup in San Antonio &nbsp;·&nbsp; $99 insured shipping to the lower 48 &nbsp;·&nbsp; <a href="shop.html#shipping">Details</a></div>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="index.html" aria-label="JJSPCBuilds home"><img class="brand-logo" src="assets/brand/jj-builds-logo.png?v=3" alt="JJ Builds"></a>
+            <nav aria-label="Main">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active" aria-current="page">Shop</a></li>
+                    <li><a href="custom.html">Custom PC</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="cart-item"><button class="cart-link snipcart-checkout" type="button" aria-label="Open shopping cart">Cart (<span class="snipcart-items-count">0</span>)</button></li>
+                </ul>
+            </nav>
+            <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="wrap">
+            <div class="kicker">Shop</div>
+            <h1>Affordable gaming PCs</h1>
+            <p class="lead">Built from tested used and new parts to get you the most for your money. Don't see what you want? <a href="custom.html">Order a custom PC.</a></p>
+        </div>
+    </section>
+
+    <!-- Shop: budget builds -->
+    <section class="section" id="buy">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">Budget builds</div>
+                <h2>Pick your budget</h2>
+                <p>Pick a budget and I'll send you the exact parts list and price before you pay anything.</p>
+            </div>
+
+            <!-- In-stock PCs go here when there are some. The block to paste is in README.md under "Adding an in-stock PC". -->
+
+            <div class="product-grid tiers">
+                <article class="product">
+                    <div class="product-art" aria-hidden="true">🖥️<span class="tag">1080p starter</span></div>
+                    <div class="product-body">
+                        <h3>Starter Build</h3>
+                        <div class="price">$500 to $700</div>
+                        <p class="muted small">Esports and lighter games at 1080p. A good first gaming PC.</p>
+                        <ul class="specs">
+                            <li><span>CPU</span>Ryzen 5 3600 class</li>
+                            <li><span>GPU</span>GTX 1660 Super / RX 6600 class</li>
+                            <li><span>RAM</span>16GB</li>
+                            <li><span>Storage</span>500GB SSD or bigger</li>
+                        </ul>
+                        <a class="btn btn-primary btn-block tier-btn" href="custom.html?build=starter#custom-form">Request this build</a>
+                    </div>
+                </article>
+                <article class="product">
+                    <div class="product-art" aria-hidden="true">🎮<span class="tag">Most popular</span></div>
+                    <div class="product-body">
+                        <h3>Sweet Spot Build</h3>
+                        <div class="price">$700 to $950</div>
+                        <p class="muted small">Most games at 1080p on high settings, with room to grow.</p>
+                        <ul class="specs">
+                            <li><span>CPU</span>Ryzen 5 5600 class</li>
+                            <li><span>GPU</span>RTX 3060 / 3060 Ti class</li>
+                            <li><span>RAM</span>16GB</li>
+                            <li><span>Storage</span>1TB SSD</li>
+                        </ul>
+                        <a class="btn btn-primary btn-block tier-btn" href="custom.html?build=sweet-spot#custom-form">Request this build</a>
+                    </div>
+                </article>
+                <article class="product">
+                    <div class="product-art" aria-hidden="true">💎<span class="tag">1440p</span></div>
+                    <div class="product-body">
+                        <h3>1440p Build</h3>
+                        <div class="price">$950 to $1,300</div>
+                        <p class="muted small">Smooth 1440p gaming and streaming.</p>
+                        <ul class="specs">
+                            <li><span>CPU</span>Ryzen 7 3700X / 5700X class</li>
+                            <li><span>GPU</span>RTX 3070 class</li>
+                            <li><span>RAM</span>32GB</li>
+                            <li><span>Storage</span>1TB SSD</li>
+                        </ul>
+                        <a class="btn btn-primary btn-block tier-btn" href="custom.html?build=1440p#custom-form">Request this build</a>
+                    </div>
+                </article>
+            </div>
+            <p class="note">Parts shown are examples. The exact parts depend on what's available when you order.</p>
+
+            <div class="notify">
+                <div>
+                    <h3>Want first dibs on the next finished PC?</h3>
+                    <p class="muted small">Finished PCs sell fast. Drop your email and I'll let you know when one is ready.</p>
+                </div>
+                <div>
+                    <form action="https://formspree.io/f/maqldgaw" method="POST" id="newsletterForm" novalidate>
+                        <input type="hidden" name="_subject" value="Next PC Alert Signup — JJ's PC Builds">
+                        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" data-fs-field>
+                        <button type="submit" class="btn btn-primary" data-fs-submit-btn>Notify me</button>
+                    </form>
+                    <p id="newsletterDone" data-fs-success style="color:var(--success);margin-top:0.6rem;font-weight:600;">✓ You're on the list.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping & pickup -->
+    <section class="section section-alt" id="shipping">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">Shipping &amp; pickup</div>
+                <h2>Two ways to get your PC</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Local pickup</h3>
+                    <div class="big">Free</div>
+                    <p>Pick up in San Antonio, TX and see it running before you take it home.</p>
+                </div>
+                <div class="card">
+                    <h3>Insured shipping</h3>
+                    <div class="big">$99 flat</div>
+                    <p>Ground shipping to the lower 48 states, insured for the full price of the PC. I'll send tracking when it ships.</p>
+                </div>
+                <div class="card">
+                    <h3>7-day warranty</h3>
+                    <div class="big">Included</div>
+                    <p>Covers two things: a PC that arrives damaged, or a part that fails within 7 days. If it has to come back, you pay the return shipping and I refund what you paid for the PC.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <img class="brand-logo" src="assets/brand/jj-builds-logo.png?v=3" alt="JJ Builds">
+            <nav aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="custom.html">Custom PC</a>
+                <a href="index.html#sell">Sell Your PC</a>
+                <a href="index.html#repairs">Repairs</a>
+                <a href="shop.html#shipping">Shipping</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>Custom PCs built with passion • San Antonio, TX • Est. 2024</p>
+        </div>
+    </footer>
+
+    <div hidden id="snipcart"></div>
+    <script src="site.js?v=4"></script>
+    <script src="snipcart.js?v=4"></script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>

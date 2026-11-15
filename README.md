@@ -2,19 +2,29 @@
 
 Static site for JJSPCBuilds (jjspcbuilds.com). It works on any static host. There is no server and no secret keys.
 
-## Homepage layout
+## Pages
 
-`index.html` is the whole site. Styles are in `home.css` and scripts are in `site.js`. Gallery photos and the video are in `assets/gallery/`. The old pages (`Builds.html`, `Pricing.html`, `Services.html`, `Contact.html`) now just redirect to the homepage.
+The site has four pages. They all share `home.css`, `site.js`, and the same nav, announcement bar, and footer.
 
-- `#buy`: three budget tiers. They are not cart items. "Request this build" fills in the custom PC form with that tier and budget. To change a price range, edit the text on the card plus the button's `data-tier` and `data-budget`.
-- `#shipping`: pickup, shipping price, and warranty. If the shipping price or warranty changes, also update the announcement bar and the hero badges at the top of `index.html`.
-- `#custom`: the custom PC request form. It goes to Formspree.
-- `#sell`: the "sell me your PC or parts" form. It goes to Formspree.
-- `#repairs`: the repair price list.
+| Page | File | What's on it |
+|---|---|---|
+| Home | `index.html` | Hero, the three paths (buy, custom, sell), gallery, sell-your-PC form, repairs, stats |
+| Shop | `shop.html` | The three budget builds, the "notify me" signup, shipping, pickup, and warranty |
+| Custom PC | `custom.html` | How it works, the custom build request form, FAQ |
+| Contact | `contact.html` | Message form and direct contact links |
+
+Things to keep the same everywhere:
+
+- **Nav, announcement bar, and footer** are copied into each page. If you change one, change all four. The only difference between pages is which nav link has `class="active"`.
+- **Build names and prices** are on the cards in `shop.html` and in the `builds` list at the top of `site.js`. Keep both the same. The shop buttons link to `custom.html?build=starter` (or `sweet-spot`, `1440p`), which fills in the form.
+- **Shipping price and warranty** show up in the announcement bar (every page), the hero badges (`index.html`), the shipping section (`shop.html`), and the FAQ (`custom.html`).
+- **Cache:** the pages load `home.css?v=4` and `site.js?v=4`. Bump that number on every page when you change the CSS or JS, so visitors get the new version right away.
+
+Old links (`Builds.html`, `Pricing.html`, `Services.html`) redirect to the new pages, and `404.html` sends any other dead link to the homepage. All forms go to Formspree.
 
 ## Adding an in-stock PC
 
-When you have a finished PC to sell, paste this into `index.html` inside the `#buy` section, where the comment says "In-stock PCs go here". Fill in the name, price, and specs. Give each PC its own `data-item-id`, and keep `data-item-price` the same as the price shown. Copy the `<article>` for each extra PC and delete it when it sells. `data-item-max-quantity="1"` stops two people from buying the same PC. The Cart button in the nav shows up by itself when the page has an "Add to cart" button.
+When you have a finished PC to sell, paste this into `shop.html`, where the comment says "In-stock PCs go here". Fill in the name, price, and specs. Give each PC its own `data-item-id`, and keep `data-item-price` the same as the price shown. Copy the `<article>` for each extra PC and delete it when it sells. `data-item-max-quantity="1"` stops two people from buying the same PC. The Cart button in the nav shows up by itself when the page has an "Add to cart" button.
 
 ```html
             <div class="section-head" id="in-stock">

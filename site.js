@@ -1,6 +1,8 @@
-// JJSPCBuilds homepage scripts: budget slider, build request buttons, forms, nav.
+// JJSPCBuilds shared scripts for every page: build links, budget slider, forms, nav.
 
-// ---- Budget slider on the custom PC form ----
+const params = new URLSearchParams(window.location.search);
+
+// ---- Budget slider on the custom PC form (custom.html) ----
 const budget = document.getElementById('budget');
 const budgetValue = document.getElementById('budgetValue');
 function showBudget() {
@@ -10,30 +12,45 @@ function showBudget() {
     budgetValue.textContent = '$' + value.toLocaleString('en-US') + (atMax ? '+' : '');
 }
 if (budget) budget.addEventListener('input', showBudget);
+
+// ---- Shop buttons link to custom.html?build=KEY and fill in the form ----
+// Keep these names and prices the same as the cards in shop.html.
+const builds = {
+    'starter': { name: 'Starter Build ($500 to $700)', budget: 600 },
+    'sweet-spot': { name: 'Sweet Spot Build ($700 to $950)', budget: 850 },
+    '1440p': { name: '1440p Build ($950 to $1,300)', budget: 1100 }
+};
+const picked = builds[params.get('build')];
+if (picked && budget) {
+    budget.value = picked.budget;
+    const tierField = document.getElementById('tierField');
+    if (tierField) tierField.value = picked.name;
+    const pickedNote = document.getElementById('pickedBuild');
+    if (pickedNote) {
+        pickedNote.textContent = 'You picked the ' + picked.name + '. Add anything else you want and send it.';
+        pickedNote.hidden = false;
+    }
+}
 showBudget();
 
-// ---- "Request this build" buttons fill in the form ----
-document.querySelectorAll('.tier-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const tierField = document.getElementById('tierField');
-        if (tierField) tierField.value = btn.dataset.tier || '';
-        if (budget && btn.dataset.budget) {
-            budget.value = btn.dataset.budget;
-            showBudget();
-        }
-    });
-});
+// ---- Contact page: contact.html?topic=repair picks the topic for you ----
+const topic = document.getElementById('topic');
+if (topic && params.get('topic') && [...topic.options].some(o => o.value === params.get('topic'))) {
+    topic.value = params.get('topic');
+}
 
 // ---- Hide the cart button when nothing on the page can be added to a cart ----
 if (!document.querySelector('.snipcart-add-item')) {
     document.querySelectorAll('.cart-item').forEach(item => { item.hidden = true; });
 }
 
-// ---- Formspree (@formspree/ajax loaded from CDN in index.html) ----
+// ---- Formspree (@formspree/ajax loaded from CDN on each page) ----
 window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-formspree('initForm', { formElement: '#customForm', formId: 'maqldgaw' });
-formspree('initForm', { formElement: '#tradeinForm', formId: 'maqldgaw' });
-formspree('initForm', { formElement: '#newsletterForm', formId: 'maqldgaw' });
+['#customForm', '#tradeinForm', '#newsletterForm', '#contactForm'].forEach(selector => {
+    if (document.querySelector(selector)) {
+        formspree('initForm', { formElement: selector, formId: 'maqldgaw' });
+    }
+});
 
 // ---- Mobile menu ----
 const menuBtn = document.querySelector('.menu-btn');
