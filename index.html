@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JJSPCBuilds | Gaming PCs, Ready to Game</title>
-    <meta name="description" content="Hand-built gaming PCs from San Antonio, TX. Shop built-to-order PCs or get a custom build. Free local pickup or $99 insured shipping.">
+    <meta name="description" content="Hand-built gaming PCs from San Antonio, TX. Buy an affordable gaming PC, get a custom build, or sell me your old PC. Free local pickup or $99 insured shipping.">
     <link rel="icon" href="assets/brand/jj-builds-logo.png?v=3">
     <meta property="og:title" content="JJSPCBuilds | Gaming PCs, Ready to Game">
     <meta property="og:image" content="assets/brand/jj-builds-logo.png?v=3">
@@ -19,12 +19,12 @@
             <a href="#home" aria-label="JJSPCBuilds home"><img class="brand-logo" src="assets/brand/jj-builds-logo.png?v=3" alt="JJ Builds"></a>
             <nav aria-label="Main">
                 <ul class="nav-links">
-                    <li><a href="#built-to-order">Shop</a></li>
-                    <li><a href="#custom">Custom Order</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#shipping">Shipping</a></li>
+                    <li><a href="#buy">Buy a PC</a></li>
+                    <li><a href="#custom">Custom PC</a></li>
+                    <li><a href="#sell">Sell Your PC</a></li>
+                    <li><a href="#repairs">Repairs</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><button class="cart-link snipcart-checkout" type="button" aria-label="Open shopping cart">Cart (<span class="snipcart-items-count">0</span>)</button></li>
+                    <li class="cart-item"><button class="cart-link snipcart-checkout" type="button" aria-label="Open shopping cart">Cart (<span class="snipcart-items-count">0</span>)</button></li>
                 </ul>
             </nav>
             <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -38,10 +38,10 @@
                 <div>
                     <div class="kicker">Hand-built in San Antonio, TX</div>
                     <h1>Gaming PCs, <span class="grad">ready to game.</span></h1>
-                    <p class="lead">Pick a build and I'll put it together and test it, or get one designed around your games and your budget.</p>
+                    <p class="lead">Affordable gaming PCs built from tested parts. Buy one, get one built for your budget, or sell me your old PC.</p>
                     <div class="hero-actions">
-                        <a href="#built-to-order" class="btn btn-primary">Shop Builds</a>
-                        <a href="#custom" class="btn btn-ghost">Custom Order</a>
+                        <a href="#buy" class="btn btn-primary">Buy a PC</a>
+                        <a href="#sell" class="btn btn-ghost">Sell Me Your PC</a>
                     </div>
                 </div>
                 <div class="hero-photo"><img src="assets/gallery/full-tower-beast.jpg" alt="Custom gaming PC built by JJSPCBuilds with purple RGB lighting"></div>
@@ -55,103 +55,80 @@
         </div>
     </section>
 
-    <!-- In-stock PCs: nothing in stock right now. The section to paste here is in README.md under "Adding an in-stock PC". -->
-
-    <!-- Built-to-order PCs -->
-    <section class="section" id="built-to-order">
+    <!-- Buy a PC -->
+    <section class="section" id="buy">
         <div class="wrap">
             <div class="section-head">
-                <div class="kicker">Built to order</div>
-                <h2>New builds, made when you order</h2>
-                <p>Pick a build and I order the parts, assemble it, and test it. Standard turnaround is 5-7 days once parts arrive.</p>
+                <div class="kicker">Buy a PC</div>
+                <h2>Affordable builds for every budget</h2>
+                <p>I build each PC from tested used and new parts to get you the most for your money. Pick a budget and I'll send you the exact parts list and price before you pay anything.</p>
             </div>
-            <div class="product-grid">
-                <article class="product" id="entry-level-gaming">
-                    <div class="product-art" aria-hidden="true">🖥️<span class="tag">1080p</span></div>
+
+            <!-- In-stock PCs go here when there are some. The block to paste is in README.md under "Adding an in-stock PC". -->
+
+            <div class="product-grid tiers">
+                <article class="product">
+                    <div class="product-art" aria-hidden="true">🖥️<span class="tag">1080p starter</span></div>
                     <div class="product-body">
-                        <h3>RX 7600 Budget 1080p</h3>
-                        <div class="price">$1,560</div>
+                        <h3>Starter Build</h3>
+                        <div class="price">$500 to $700</div>
+                        <p class="muted small">Esports and lighter games at 1080p. A good first gaming PC.</p>
                         <ul class="specs">
-                            <li><span>CPU</span>AMD Ryzen 5 7600X</li>
-                            <li><span>GPU</span>Radeon RX 7600 8GB</li>
-                            <li><span>RAM</span>16GB DDR5</li>
-                            <li><span>Storage</span>1TB NVMe SSD</li>
-                            <li><span>Target</span>1080p High Settings</li>
+                            <li><span>CPU</span>Ryzen 5 3600 class</li>
+                            <li><span>GPU</span>GTX 1660 Super / RX 6600 class</li>
+                            <li><span>RAM</span>16GB</li>
+                            <li><span>Storage</span>500GB SSD or bigger</li>
                         </ul>
-                        <button class="btn btn-primary btn-block snipcart-add-item"
-                            data-item-id="entry-level-gaming"
-                            data-item-price="1560"
-                            data-item-url="/"
-                            data-item-description="Budget 1080p gaming PC with Ryzen 5 7600X, Radeon RX 7600, 16GB DDR5, and 1TB NVMe SSD."
-                            data-item-image="assets/images/pc-build-placeholder.svg"
-                            data-item-name="RX 7600 Budget 1080p">Add to cart</button>
+                        <a class="btn btn-primary btn-block tier-btn" href="#custom-form" data-budget="600" data-tier="Starter Build ($500 to $700)">Request this build</a>
                     </div>
                 </article>
-                <article class="product" id="sweet-spot-gaming">
-                    <div class="product-art" aria-hidden="true">🎮<span class="tag">Popular · 1440p</span></div>
+                <article class="product">
+                    <div class="product-art" aria-hidden="true">🎮<span class="tag">Most popular</span></div>
                     <div class="product-body">
-                        <h3>RX 9070 XT Balanced 1440p</h3>
-                        <div class="price">$2,880</div>
+                        <h3>Sweet Spot Build</h3>
+                        <div class="price">$700 to $950</div>
+                        <p class="muted small">Most games at 1080p on high settings, with room to grow.</p>
                         <ul class="specs">
-                            <li><span>CPU</span>AMD Ryzen 7 9800X3D</li>
-                            <li><span>GPU</span>Radeon RX 9070 XT 16GB</li>
-                            <li><span>RAM</span>32GB DDR5 6000MHz</li>
-                            <li><span>Storage</span>2TB NVMe Gen4 SSD</li>
-                            <li><span>Target</span>1440p Ultra Settings</li>
+                            <li><span>CPU</span>Ryzen 5 5600 class</li>
+                            <li><span>GPU</span>RTX 3060 / 3060 Ti class</li>
+                            <li><span>RAM</span>16GB</li>
+                            <li><span>Storage</span>1TB SSD</li>
                         </ul>
-                        <button class="btn btn-primary btn-block snipcart-add-item"
-                            data-item-id="sweet-spot-gaming"
-                            data-item-price="2880"
-                            data-item-url="/"
-                            data-item-description="Balanced 1440p gaming PC with Ryzen 7 9800X3D, Radeon RX 9070 XT, 32GB DDR5, and 2TB NVMe storage."
-                            data-item-image="assets/images/pc-build-placeholder.svg"
-                            data-item-name="RX 9070 XT Balanced 1440p">Add to cart</button>
+                        <a class="btn btn-primary btn-block tier-btn" href="#custom-form" data-budget="850" data-tier="Sweet Spot Build ($700 to $950)">Request this build</a>
                     </div>
                 </article>
-                <article class="product" id="premium-4k">
-                    <div class="product-art" aria-hidden="true">💎<span class="tag">4K flagship</span></div>
+                <article class="product">
+                    <div class="product-art" aria-hidden="true">💎<span class="tag">1440p</span></div>
                     <div class="product-body">
-                        <h3>RTX 5090 Premium 4K</h3>
-                        <div class="price">$9,420</div>
+                        <h3>1440p Build</h3>
+                        <div class="price">$950 to $1,300</div>
+                        <p class="muted small">Smooth 1440p gaming and streaming.</p>
                         <ul class="specs">
-                            <li><span>CPU</span>AMD Ryzen 7 9800X3D</li>
-                            <li><span>GPU</span>GeForce RTX 5090 32GB</li>
-                            <li><span>RAM</span>64GB DDR5 6000MHz</li>
-                            <li><span>Storage</span>4TB NVMe Gen4</li>
-                            <li><span>Target</span>4K High/Ultra Settings</li>
+                            <li><span>CPU</span>Ryzen 7 3700X / 5700X class</li>
+                            <li><span>GPU</span>RTX 3070 class</li>
+                            <li><span>RAM</span>32GB</li>
+                            <li><span>Storage</span>1TB SSD</li>
                         </ul>
-                        <button class="btn btn-primary btn-block snipcart-add-item"
-                            data-item-id="premium-4k"
-                            data-item-price="9420"
-                            data-item-url="/"
-                            data-item-description="Premium 4K gaming PC with Ryzen 7 9800X3D, GeForce RTX 5090, 64GB DDR5, and 4TB NVMe storage."
-                            data-item-image="assets/images/pc-build-placeholder.svg"
-                            data-item-name="RTX 5090 Premium 4K">Add to cart</button>
-                    </div>
-                </article>
-                <article class="product" id="creator-workstation">
-                    <div class="product-art" aria-hidden="true">🎬<span class="tag">Creator</span></div>
-                    <div class="product-body">
-                        <h3>RTX 5090 Creator Tower</h3>
-                        <div class="price">$14,520</div>
-                        <ul class="specs">
-                            <li><span>CPU</span>Threadripper 7960X 24-core</li>
-                            <li><span>GPU</span>GeForce RTX 5090 32GB</li>
-                            <li><span>RAM</span>128GB ECC RDIMM</li>
-                            <li><span>Storage</span>4TB NVMe Storage</li>
-                            <li><span>Target</span>Video Editing / 3D Render</li>
-                        </ul>
-                        <button class="btn btn-primary btn-block snipcart-add-item"
-                            data-item-id="creator-workstation"
-                            data-item-price="14520"
-                            data-item-url="/"
-                            data-item-description="Creator workstation with Threadripper 7960X, GeForce RTX 5090, 128GB ECC memory, and 4TB NVMe storage."
-                            data-item-image="assets/images/pc-build-placeholder.svg"
-                            data-item-name="RTX 5090 Creator Tower">Add to cart</button>
+                        <a class="btn btn-primary btn-block tier-btn" href="#custom-form" data-budget="1100" data-tier="1440p Build ($950 to $1,300)">Request this build</a>
                     </div>
                 </article>
             </div>
-            <p class="note">Prices cover parts and assembly. Shipping and tax are added at checkout. Want different parts? <a href="#custom">Build your own below.</a></p>
+            <p class="note">Parts shown are examples. The exact parts depend on what's available when you order.</p>
+
+            <div class="notify">
+                <div>
+                    <h3>Want first dibs on the next finished PC?</h3>
+                    <p class="muted small">Finished PCs sell fast. Drop your email and I'll let you know when one is ready.</p>
+                </div>
+                <div>
+                    <form action="https://formspree.io/f/maqldgaw" method="POST" id="newsletterForm" novalidate>
+                        <input type="hidden" name="_subject" value="Next PC Alert Signup — JJ's PC Builds">
+                        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" data-fs-field>
+                        <button type="submit" class="btn btn-primary" data-fs-submit-btn>Notify me</button>
+                    </form>
+                    <p id="newsletterDone" data-fs-success style="display:none;color:var(--success);margin-top:0.6rem;font-weight:600;">✓ You're on the list.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -161,13 +138,12 @@
             <div class="section-head">
                 <div class="kicker">Shipping &amp; pickup</div>
                 <h2>Two ways to get your PC</h2>
-                <p>Pick one at checkout.</p>
             </div>
             <div class="card-grid">
                 <div class="card">
                     <h3>Local pickup</h3>
                     <div class="big">Free</div>
-                    <p>Pick up in San Antonio, TX. After you order, I'll message you to set a time.</p>
+                    <p>Pick up in San Antonio, TX and see it running before you take it home.</p>
                 </div>
                 <div class="card">
                     <h3>Insured shipping</h3>
@@ -183,122 +159,152 @@
         </div>
     </section>
 
-    <!-- Custom order: configurator + quiz -->
+    <!-- Custom PC -->
     <section class="section" id="custom">
         <div class="wrap">
             <div class="section-head">
-                <div class="kicker">Custom order</div>
-                <h2>Build your own</h2>
-                <p>Pick parts to see a live estimate, then send it to me for a real quote. This is an estimate tool, so nothing is charged here.</p>
+                <div class="kicker">Custom PC</div>
+                <h2>Get a PC built around your budget</h2>
+                <p>Tell me your budget and what you play. You don't need to know anything about parts.</p>
             </div>
-            <div class="config-grid">
-                <form class="config-panel" id="buildConfigurator">
-                    <fieldset>
-                        <legend>Graphics platform</legend>
-                        <div class="brand-options">
-                            <label class="brand-option"><input type="radio" name="gpuBrand" value="nvidia" checked><strong>NVIDIA</strong><span>GeForce RTX options</span></label>
-                            <label class="brand-option"><input type="radio" name="gpuBrand" value="radeon"><strong>Radeon</strong><span>AMD Radeon RX options</span></label>
-                        </div>
-                    </fieldset>
-                    <div class="fields-2">
-                        <div class="field"><label for="gpuTier">GPU</label><select id="gpuTier" name="gpuTier"></select></div>
-                        <div class="field"><label for="cpuTier">CPU</label><select id="cpuTier" name="cpuTier">
-                            <option value="7600x" data-price="199">Ryzen 5 7600X — $199</option>
-                            <option value="9800x3d" data-price="469">Ryzen 7 9800X3D — $469</option>
-                            <option value="threadripper" data-price="1120">Threadripper 7960X — $1,120</option></select></div>
-                        <div class="field"><label for="ramTier">Memory</label><select id="ramTier" name="ramTier">
-                            <option value="16gb" data-price="266">16GB DDR5 — $266</option>
-                            <option value="32gb" data-price="500">32GB DDR5 — $500</option>
-                            <option value="64gb" data-price="825">64GB DDR5 — $825</option>
-                            <option value="128gb" data-price="3980">128GB ECC RDIMM — $3,980</option></select></div>
-                        <div class="field"><label for="storageTier">Storage</label><select id="storageTier" name="storageTier">
-                            <option value="1tb" data-price="157">1TB NVMe — $157</option>
-                            <option value="2tb" data-price="320">2TB NVMe — $320</option>
-                            <option value="4tb" data-price="445">4TB NVMe — $445</option></select></div>
-                        <div class="field"><label for="coolingTier">Cooling</label><select id="coolingTier" name="coolingTier">
-                            <option value="air" data-price="45">Air cooler — $45</option>
-                            <option value="240aio" data-price="80">240mm liquid cooler — $80</option>
-                            <option value="threadripper" data-price="165">Threadripper cooler — $165</option></select></div>
-                        <div class="field"><label for="caseTier">Case &amp; power</label><select id="caseTier" name="caseTier">
-                            <option value="airflow" data-price="130">Airflow case + 650W PSU — $130</option>
-                            <option value="balanced" data-price="160">Airflow case + 850W PSU — $160</option>
-                            <option value="premium" data-price="310">Premium case + 1200W PSU — $310</option></select></div>
-                    </div>
-                    <div class="field"><label for="setupTier">OS &amp; setup</label><select id="setupTier" name="setupTier">
-                        <option value="self" data-price="0">Customer OS/setup — $0</option>
-                        <option value="standard" data-price="100">OS install + setup — $100</option></select></div>
-                </form>
-                <aside class="config-summary" aria-live="polite">
-                    <div class="kicker">Estimated total</div>
-                    <div class="config-total" id="configTotal">$0</div>
-                    <p class="muted small">Parts estimate plus 20% markup. Shipping, tax, and final part availability are confirmed with your quote.</p>
-                    <ul class="config-breakdown" id="configBreakdown"></ul>
-                    <a class="btn btn-primary btn-block" href="#quote">Request this build</a>
-                </aside>
+            <div class="card-grid steps">
+                <div class="card"><div class="step-num">1</div><h3>Tell me what you want</h3><p>Fill out the short form with your budget, your games, and the look you like.</p></div>
+                <div class="card"><div class="step-num">2</div><h3>Get your quote</h3><p>I send you a full parts list and price within 24 hours. The quote is free.</p></div>
+                <div class="card"><div class="step-num">3</div><h3>Approve and pay for parts</h3><p>Ask for changes until it's right. Once you approve, you pay for the parts and I order them.</p></div>
+                <div class="card"><div class="step-num">4</div><h3>I build and test it</h3><p>Clean cable management and a full stress test. The $100 build fee is due when you get your PC.</p></div>
             </div>
 
-            <div class="quiz" id="quiz">
-                <div class="kicker">Not sure what you need?</div>
-                <div class="quiz-progress">
-                    <div class="quiz-dot done" id="dot1"></div>
-                    <div class="quiz-dot" id="dot2"></div>
-                    <div class="quiz-dot" id="dot3"></div>
-                </div>
-                <div class="quiz-step active" id="step1">
-                    <div class="quiz-question">1. What will you mainly use it for?</div>
-                    <div class="quiz-options">
-                        <button class="quiz-option" type="button" onclick="quizAnswer(1,'gaming',this)">Gaming</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(1,'streaming',this)">Gaming + Streaming</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(1,'work',this)">Work / School</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(1,'creative',this)">Video / Creative</button>
+            <div class="split custom-split" id="custom-form">
+                <div>
+                    <form class="form-card" id="customForm" action="https://formspree.io/f/maqldgaw" method="POST" novalidate>
+                        <input type="hidden" name="_subject" value="Custom PC Request — JJ's PC Builds">
+                        <input type="hidden" id="tierField" name="build">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe" data-fs-field>
+                                <span class="fs-error" data-fs-error="name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-field">Email or Phone *</label>
+                                <input type="text" id="contact-field" name="contact" required placeholder="you@email.com or (210) 555-1234" data-fs-field>
+                                <span class="fs-error" data-fs-error="contact"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="use">Main use</label>
+                                <select id="use" name="use" data-fs-field>
+                                    <option value="">Select one...</option>
+                                    <option>Gaming</option>
+                                    <option>Gaming + Streaming</option>
+                                    <option>Video Editing / Creative</option>
+                                    <option>School / Work</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="look">Preferred look</label>
+                                <select id="look" name="look" data-fs-field>
+                                    <option value="">Select one...</option>
+                                    <option>RGB / Gaming</option>
+                                    <option>Clean white</option>
+                                    <option>All black</option>
+                                    <option>No preference</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget: <strong id="budgetValue">$800</strong></label>
+                            <input type="range" id="budget" name="budget" min="400" max="2500" step="50" value="800">
+                            <div class="range-ends"><span>$400</span><span>$2,500+</span></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Anything else? (optional)</label>
+                            <textarea id="notes" name="notes" placeholder="Games you play, monitor you have, parts you already own, colors you like." data-fs-field></textarea>
+                        </div>
+                        <span class="fs-error" data-fs-error style="text-align:center;margin-bottom:0.5rem;"></span>
+                        <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Send My Build Request</button>
+                        <p class="muted small" style="text-align:center;margin-top:0.8rem;">Free quote. No commitment.</p>
+                    </form>
+                    <div class="success-box" id="successMessage" data-fs-success style="display:none;">
+                        <h3>Request sent!</h3>
+                        <p>I'll get back to you within 24 hours with a parts list and price.</p>
                     </div>
                 </div>
-                <div class="quiz-step" id="step2">
-                    <div class="quiz-question">2. What's your budget?</div>
-                    <div class="quiz-options">
-                        <button class="quiz-option" type="button" onclick="quizAnswer(2,'low',this)">Under $800</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(2,'mid',this)">$800–$1,500</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(2,'high',this)">$1,500–$2,500</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(2,'max',this)">$2,500+</button>
-                    </div>
-                </div>
-                <div class="quiz-step" id="step3">
-                    <div class="quiz-question">3. What monitor resolution are you targeting?</div>
-                    <div class="quiz-options">
-                        <button class="quiz-option" type="button" onclick="quizAnswer(3,'1080',this)">1080p</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(3,'1440',this)">1440p</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(3,'4k',this)">4K</button>
-                        <button class="quiz-option" type="button" onclick="quizAnswer(3,'notsure',this)">Not sure yet</button>
-                    </div>
-                </div>
-                <div class="quiz-step" id="stepResult">
-                    <div class="quiz-result" id="quizResult"></div>
-                    <a href="#quote" id="quizCta" class="btn btn-primary btn-block">Get a quote for this build</a>
-                    <button class="link-btn" type="button" onclick="resetQuiz()">↺ Start over</button>
+                <div class="faq">
+                    <h3>Common questions</h3>
+                    <details><summary>Do I need to know about PC parts?</summary><p>No. Tell me your budget and what you want to play, and I'll pick the parts and explain why.</p></details>
+                    <details><summary>How does payment work?</summary><p>The quote is free. Once you approve the parts list, you pay for the parts. The $100 build fee is due when you get your PC.</p></details>
+                    <details><summary>How long does it take?</summary><p>Usually 5-7 days once the parts arrive.</p></details>
+                    <details><summary>Do you use new or used parts?</summary><p>Both. Used parts that I've tested get you a lot more PC for the money. Your quote shows which parts are new and which are used.</p></details>
+                    <details><summary>What's the warranty?</summary><p>7 days. It covers a PC that arrives damaged or a part that fails. You pay the return shipping and I refund what you paid for the PC.</p></details>
+                    <p class="muted small" style="margin-top:1rem;">Rather talk it through? <a href="https://calendly.com/jjspcbuilds/30min" target="_blank" rel="noopener" style="color:var(--accent);">Book a free consult.</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services & pricing -->
-    <section class="section" id="services">
+    <!-- Sell your PC -->
+    <section class="section section-alt" id="sell">
+        <div class="wrap split">
+            <div>
+                <div class="kicker">Sell your PC</div>
+                <h2>Sell me your PC or parts</h2>
+                <p class="muted" style="margin:0.8rem 0 1.2rem;">I buy used and broken gaming PCs, graphics cards, and other parts. Fill out the form and I'll give you an honest offer within 24 hours.</p>
+                <div class="card">
+                    <ul style="margin-top:0;">
+                        <li>Fast response, usually same day</li>
+                        <li>Fair market value offers</li>
+                        <li>Local pickup in San Antonio</li>
+                        <li>Full PCs, single parts, working or not</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="tradein-form">
+                <form class="form-card" action="https://formspree.io/f/maqldgaw" method="POST" id="tradeinForm" novalidate>
+                    <input type="hidden" name="_subject" value="Trade-In Inquiry — JJ's PC Builds">
+                    <div class="form-group">
+                        <label for="ti-name">Your Name *</label>
+                        <input type="text" id="ti-name" name="name" required placeholder="John Doe" data-fs-field>
+                        <span class="fs-error" data-fs-error="name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="ti-contact">Contact (phone or email) *</label>
+                        <input type="text" id="ti-contact" name="contact" required placeholder="(210) 555-1234" data-fs-field>
+                        <span class="fs-error" data-fs-error="contact"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="ti-desc">Describe What You're Selling *</label>
+                        <textarea id="ti-desc" name="description" required placeholder="e.g. Ryzen 5 3600, RTX 3060, 16GB RAM, 500GB SSD, working condition, no issues" data-fs-field></textarea>
+                        <span class="fs-error" data-fs-error="description"></span>
+                    </div>
+                    <span class="fs-error" data-fs-error style="text-align:center;margin-bottom:0.5rem;"></span>
+                    <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Submit for Offer</button>
+                </form>
+                <div class="success-box" id="tradeinSuccess" data-fs-success style="display:none;">
+                    <h3>Got it!</h3>
+                    <p>I'll check it out and get back to you within 24 hours with an offer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repairs -->
+    <section class="section" id="repairs">
         <div class="wrap">
             <div class="section-head center">
-                <div class="kicker">Services</div>
-                <h2>Already have parts? I'll build it.</h2>
-                <p>Flat rates, no hidden fees. For build service you order your own parts, so you keep full control of your parts budget. Labor is due at pickup.</p>
+                <div class="kicker">Repairs</div>
+                <h2>Basic repairs and upgrades</h2>
+                <p>I mainly do part swaps and case swaps. Need something else? Ask and I'll tell you if I can do it.</p>
             </div>
             <div class="price-list">
-                <div class="price-row"><div><strong>Full Custom PC Build</strong><p>Parts list, full assembly, cable management, POST, and OS install.</p></div><div class="amt">$100</div></div>
-                <div class="price-row"><div><strong>Custom Build Planning</strong><p>A focused parts list matched to your games, workflow, and budget before assembly begins.</p></div><div class="amt">$50</div></div>
-                <div class="price-row"><div><strong>Component Install</strong><p>Install a customer-supplied upgrade and make sure the system is stable.</p></div><div class="amt">$50</div></div>
-                <div class="price-row"><div><strong>PC Cleanup &amp; Optimization</strong><p>Deep clean, thermal repaste, cable management, updates, drivers, and performance tune.</p></div><div class="amt">$50</div></div>
-                <div class="price-row"><div><strong>Setup &amp; Configuration</strong><p>Monitor, peripherals, RGB sync, and software setup from scratch.</p></div><div class="amt">$50</div></div>
-                <div class="price-row"><div><strong>Storage Setup</strong><p>Configure new storage and organize a clean handoff for your files and games.</p></div><div class="amt">$75</div></div>
-                <div class="price-row"><div><strong>Local Setup Appointment</strong><p>In-person setup help in the San Antonio area by appointment.</p></div><div class="amt">$50 + $20 travel</div></div>
-                <div class="price-row free"><div><strong>Consultation / Quote</strong><p>Tell me what you need and I'll figure out the best build or fix for your budget. No pressure.</p></div><div class="amt">FREE</div></div>
+                <div class="price-row"><div><strong>Component Swap</strong><p>Graphics card, RAM, storage, power supply, cooler, and other part swaps. Price is for labor. The part is extra if you need one.</p></div><div class="amt">From $50</div></div>
+                <div class="price-row"><div><strong>Case Swap</strong><p>Your whole build moved into a new case with clean cable management.</p></div><div class="amt">Ask for a quote</div></div>
+                <div class="price-row"><div><strong>Diagnostic</strong><p>Not sure what's wrong? I'll check it out and give you a quote before any repair.</p></div><div class="amt">$50</div></div>
+                <div class="price-row free"><div><strong>Something else?</strong><p>Send me what you need and I'll see what I can do.</p></div><div class="amt">Free quote</div></div>
             </div>
-            <p class="note" style="text-align:center;">How build service works: 1) Get a free quote → 2) I send a parts list with links → 3) You order the parts → 4) Bring them to me → 5) Pay $100 labor at pickup.</p>
+            <p class="note" style="text-align:center;"><a class="btn btn-ghost" href="#contact">Message me about a repair</a></p>
         </div>
     </section>
 
@@ -340,126 +346,8 @@
         </div>
     </section>
 
-    <!-- Trade-in -->
-    <section class="section section-alt" id="tradein">
-        <div class="wrap split">
-            <div>
-                <div class="kicker">Trade in</div>
-                <h2>Got an old PC?</h2>
-                <p class="muted" style="margin:0.8rem 0 1.2rem;">I buy used PCs and parts. Fill out the form and I'll give you an honest offer within 24 hours.</p>
-                <div class="card">
-                    <ul style="margin-top:0;">
-                        <li>Fast response, usually same day</li>
-                        <li>Fair market value offers</li>
-                        <li>Local pickup in San Antonio</li>
-                        <li>Parts or full systems accepted</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="tradein-form">
-                <form class="form-card" action="https://formspree.io/f/maqldgaw" method="POST" id="tradeinForm" novalidate>
-                    <input type="hidden" name="_subject" value="Trade-In Inquiry — JJ's PC Builds">
-                    <div class="form-group">
-                        <label for="ti-name">Your Name *</label>
-                        <input type="text" id="ti-name" name="name" required placeholder="John Doe" data-fs-field>
-                        <span class="fs-error" data-fs-error="name"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="ti-contact">Contact (phone or email) *</label>
-                        <input type="text" id="ti-contact" name="contact" required placeholder="(210) 555-1234" data-fs-field>
-                        <span class="fs-error" data-fs-error="contact"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="ti-desc">Describe What You're Selling *</label>
-                        <textarea id="ti-desc" name="description" required placeholder="e.g. Ryzen 5 3600, RTX 3060, 16GB RAM, 500GB SSD, working condition, no issues" data-fs-field></textarea>
-                        <span class="fs-error" data-fs-error="description"></span>
-                    </div>
-                    <span class="fs-error" data-fs-error style="text-align:center;margin-bottom:0.5rem;"></span>
-                    <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Submit for Offer</button>
-                </form>
-                <div class="success-box" id="tradeinSuccess" data-fs-success style="display:none;">
-                    <h3>Got it!</h3>
-                    <p>I'll check it out and get back to you within 24 hours with an offer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote form -->
-    <section class="section" id="quote">
-        <div class="wrap">
-            <div class="section-head center">
-                <div class="kicker">Free quote</div>
-                <h2>Tell me what you need</h2>
-                <p>I'll get back to you within 24 hours. Want to talk it through? <a href="https://calendly.com/jjspcbuilds/30min" target="_blank" rel="noopener" style="color:var(--accent);">Book a free consult.</a></p>
-            </div>
-            <form class="form-card narrow" id="quoteForm" action="https://formspree.io/f/maqldgaw" method="POST" novalidate>
-                <input type="hidden" name="_subject" value="New Inquiry — JJ's PC Builds">
-                <input type="hidden" id="configSummary" name="configuration">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe" data-fs-field>
-                        <span class="fs-error" data-fs-error="name"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-field">Email or Phone *</label>
-                        <input type="text" id="contact-field" name="contact" required placeholder="you@email.com or (210) 555-1234" data-fs-field>
-                        <span class="fs-error" data-fs-error="contact"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="service">What do you need? *</label>
-                    <select id="service" name="service" required data-fs-field>
-                        <option value="">Select a service...</option>
-                        <option value="custom-order">Custom PC order (from the configurator)</option>
-                        <option value="custom-build">Build service with my own parts — $100 labor</option>
-                        <option value="setup">Setup &amp; Other — from $50</option>
-                        <option value="quote">Just want a free quote</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Budget Range (for builds)</label>
-                    <div class="budget-options">
-                        <button type="button" class="budget-btn" data-value="under-800">Under $800</button>
-                        <button type="button" class="budget-btn" data-value="800-1000">$800-1000</button>
-                        <button type="button" class="budget-btn active" data-value="1000-1500">$1000-1500</button>
-                        <button type="button" class="budget-btn" data-value="1500-2000">$1500-2000</button>
-                        <button type="button" class="budget-btn" data-value="2000+">$2000+</button>
-                    </div>
-                    <input type="hidden" id="budget" name="budget" value="1000-1500">
-                </div>
-                <div class="form-group">
-                    <label for="notes">Tell me more *</label>
-                    <textarea id="notes" name="notes" required placeholder="What games or work is it for, any parts you already have, what your PC is doing (or not doing). The more detail the better." data-fs-field></textarea>
-                    <span class="fs-error" data-fs-error="notes"></span>
-                </div>
-                <span class="fs-error" data-fs-error style="text-align:center;margin-bottom:0.5rem;"></span>
-                <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Send Inquiry</button>
-            </form>
-            <div class="success-box narrow" id="successMessage" data-fs-success style="display:none;">
-                <h3>Quote request sent!</h3>
-                <p>I'll review it and get back to you within 24 hours with a parts list and quote.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="section section-alt newsletter">
-        <div class="wrap">
-            <h2>Stay in the loop</h2>
-            <p class="muted" style="margin-top:0.5rem;">New builds, deals, and PC tips. No spam ever.</p>
-            <form action="https://formspree.io/f/maqldgaw" method="POST" id="newsletterForm" novalidate>
-                <input type="hidden" name="_subject" value="Newsletter Signup — JJ's PC Builds">
-                <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" data-fs-field>
-                <button type="submit" class="btn btn-primary" data-fs-submit-btn>Subscribe</button>
-            </form>
-            <p id="newsletterDone" data-fs-success style="display:none;color:var(--success);margin-top:1rem;font-weight:600;">✓ You're in! Talk soon.</p>
-        </div>
-    </section>
-
     <!-- Contact -->
-    <section class="section" id="contact">
+    <section class="section section-alt" id="contact">
         <div class="wrap">
             <div class="section-head center">
                 <div class="kicker">Contact</div>
@@ -480,9 +368,10 @@
         <div class="wrap">
             <img class="brand-logo" src="assets/brand/jj-builds-logo.png?v=3" alt="JJ Builds">
             <nav aria-label="Footer">
-                <a href="#built-to-order">Shop</a>
-                <a href="#custom">Custom Order</a>
-                <a href="#services">Services</a>
+                <a href="#buy">Buy a PC</a>
+                <a href="#custom">Custom PC</a>
+                <a href="#sell">Sell Your PC</a>
+                <a href="#repairs">Repairs</a>
                 <a href="#shipping">Shipping</a>
                 <a href="#contact">Contact</a>
             </nav>
