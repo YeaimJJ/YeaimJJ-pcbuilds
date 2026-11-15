@@ -88,10 +88,9 @@ function showQuizResult() {
         price = 'Custom quote';
         specs = "Under $800 works best with smart used parts. Tell me your budget and I'll find the best parts for it.";
     } else if (budget === 'mid') {
-        build = 'In-stock builds';
-        price = 'See what\'s ready now';
-        specs = 'My in-stock PCs are built for this budget. Check what\'s available, or ask for a custom quote.';
-        link = '#in-stock'; linkText = 'See in-stock PCs';
+        build = 'Custom build for your budget';
+        price = 'Custom quote';
+        specs = "For $800 to $1,500 I'll put together a parts list that gets the most out of your budget.";
     } else if (budget === 'high' && res === '1080') {
         build = 'RX 7600 Budget 1080p';
         price = '$1,560';

@@ -15,9 +15,53 @@ Static storefront and service site for JJSPCBuilds. The site is deployable to an
 
 `index.html` is a product-first storefront. Styles are in `home.css` and scripts are in `site.js`. Gallery photos and the video are real files in `assets/gallery/`.
 
-- `#in-stock`: PCs that are built and ready to sell. To add one, copy an `<article class="product">` block, give it a new `data-item-id`, and keep `data-item-price` the same as the price shown. `data-item-max-quantity="1"` stops two people from buying the same PC. Delete the block when it sells.
+- `#in-stock`: hidden right now because nothing is in stock. See "Adding an in-stock PC" below.
 - `#built-to-order`: the four fixed tiers. Their IDs (`entry-level-gaming`, `sweet-spot-gaming`, `premium-4k`, `creator-workstation`) are also used in `Builds.html`, so keep IDs and prices the same in both.
 - Every `.snipcart-add-item` button needs `data-item-id`, `data-item-price`, `data-item-url`, `data-item-description`, `data-item-image`, and `data-item-name`.
+
+## Adding an in-stock PC
+
+When you have a PC ready to sell, paste this into `index.html` where the comment says "In-stock PCs" (right above the built-to-order section). Fill in the name, price, and specs. Give each PC its own `data-item-id`, and keep `data-item-price` the same as the price shown. Copy the `<article>` for each extra PC and delete it when it sells. `data-item-max-quantity="1"` stops two people from buying the same PC. You can also point the nav "Shop" link and the hero "Shop Builds" button at `#in-stock`.
+
+```html
+    <section class="section" id="in-stock">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">In stock</div>
+                <h2>Ready-to-go PCs</h2>
+                <p>Built, tested, and ready for pickup or shipping. When one sells, it's gone.</p>
+            </div>
+            <div class="product-grid">
+                <article> to add another one.
+                     Give each PC its own data-item-id. Keep data-item-price the same as the price shown. -->
+                <article class="product" id="instock-CHANGE-ME">
+                    <div class="product-art" aria-hidden="true">🖥️<span class="tag stock">In stock</span></div>
+                    <div class="product-body">
+                        <h3>CPU NAME + GPU NAME</h3>
+                        <div class="price">$000</div>
+                        <ul class="specs">
+                            <li><span>CPU</span>...</li>
+                            <li><span>GPU</span>...</li>
+                            <li><span>RAM</span>...</li>
+                            <li><span>Storage</span>...</li>
+                            <li><span>PSU</span>...</li>
+                            <li><span>Case</span>...</li>
+                            <li><span>OS</span>...</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block snipcart-add-item"
+                            data-item-id="instock-CHANGE-ME"
+                            data-item-price="000"
+                            data-item-url="/"
+                            data-item-description="In-stock gaming PC with ..."
+                            data-item-image="assets/images/pc-build-placeholder.svg"
+                            data-item-name="CPU NAME + GPU NAME"
+                            data-item-max-quantity="1">Add to cart</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+```
 
 ## Shipping
 
