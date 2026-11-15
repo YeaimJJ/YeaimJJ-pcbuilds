@@ -1,6 +1,54 @@
 # JJSPCBuilds
 
-Static storefront and service site for JJSPCBuilds. The site is deployable to any static host; there is no server-side application or secret required.
+Static site for JJSPCBuilds (jjspcbuilds.com). It works on any static host. There is no server and no secret keys.
+
+## Homepage layout
+
+`index.html` is the whole site. Styles are in `home.css` and scripts are in `site.js`. Gallery photos and the video are in `assets/gallery/`. The old pages (`Builds.html`, `Pricing.html`, `Services.html`, `Contact.html`) now just redirect to the homepage.
+
+- `#buy`: three budget tiers. They are not cart items. "Request this build" fills in the custom PC form with that tier and budget. To change a price range, edit the text on the card plus the button's `data-tier` and `data-budget`.
+- `#shipping`: pickup, shipping price, and warranty. If the shipping price or warranty changes, also update the announcement bar and the hero badges at the top of `index.html`.
+- `#custom`: the custom PC request form. It goes to Formspree.
+- `#sell`: the "sell me your PC or parts" form. It goes to Formspree.
+- `#repairs`: the repair price list.
+
+## Adding an in-stock PC
+
+When you have a finished PC to sell, paste this into `index.html` inside the `#buy` section, where the comment says "In-stock PCs go here". Fill in the name, price, and specs. Give each PC its own `data-item-id`, and keep `data-item-price` the same as the price shown. Copy the `<article>` for each extra PC and delete it when it sells. `data-item-max-quantity="1"` stops two people from buying the same PC. The Cart button in the nav shows up by itself when the page has an "Add to cart" button.
+
+```html
+            <div class="section-head" id="in-stock">
+                <div class="kicker">In stock</div>
+                <h2>Ready-to-go PCs</h2>
+                <p>Built, tested, and ready for pickup or shipping. When one sells, it's gone.</p>
+            </div>
+            <div class="product-grid">
+                <article class="product" id="instock-CHANGE-ME">
+                    <div class="product-art" aria-hidden="true">🖥️<span class="tag stock">In stock</span></div>
+                    <div class="product-body">
+                        <h3>CPU NAME + GPU NAME</h3>
+                        <div class="price">$000</div>
+                        <ul class="specs">
+                            <li><span>CPU</span>...</li>
+                            <li><span>GPU</span>...</li>
+                            <li><span>RAM</span>...</li>
+                            <li><span>Storage</span>...</li>
+                            <li><span>PSU</span>...</li>
+                            <li><span>Case</span>...</li>
+                            <li><span>OS</span>...</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block snipcart-add-item"
+                            data-item-id="instock-CHANGE-ME"
+                            data-item-price="000"
+                            data-item-url="/"
+                            data-item-description="In-stock gaming PC with ..."
+                            data-item-image="assets/images/pc-build-placeholder.svg"
+                            data-item-name="CPU NAME + GPU NAME"
+                            data-item-max-quantity="1">Add to cart</button>
+                    </div>
+                </article>
+            </div>
+```
 
 ## Enable Snipcart checkout
 
@@ -11,10 +59,6 @@ Static storefront and service site for JJSPCBuilds. The site is deployable to an
 5. In the Snipcart dashboard, configure payment providers, taxes, shipping/pickup rules, order emails, and inventory before accepting orders. Adding the loader and buttons alone does not enable checkout.
 6. Add `jjspcbuilds.com` as the production domain in Snipcart's dashboard/domain settings before accepting live orders. The site uses the official Snipcart v3.7.1 settings bootstrap; if the cart remains on “Getting your cart ready,” verify that the dashboard key is the public key for this site and that the domain is enabled.
 
-Products live in the `#shop` and `#builds` sections of `index.html` and `Builds.html`. Keep the same stable IDs in both surfaces. Every sellable item must provide `data-item-price`, `data-item-url`, `data-item-description`, `data-item-image`, and `data-item-name` on its `.snipcart-add-item` button. Use `disabled` and an explicit sold-out label for unavailable inventory.
+## Shipping in Snipcart
 
-The homepage `#configurator` is intentionally quote-only. Its option prices and the `configMarkup` value live in the configurator script in `index.html`; update both the option label/price and the numeric value when market costs change. The configurator estimate applies the 20% markup and writes the selected parts into the quote form, but it does not create a Snipcart item. Keep stable Snipcart product metadata limited to the fixed catalog products.
-
-## Catalog pricing assumptions
-
-The four customer-facing tier prices were rounded from a September 9, 2026 market snapshot using live Newegg search listings plus AMD/NVIDIA manufacturer references, then applying the requested 20% parts markup. The snapshot sources include [Ryzen 5 7600X](https://www.newegg.com/p/pl?d=Ryzen+5+7600X), [Radeon RX 7600](https://www.newegg.com/p/pl?d=Radeon+RX+7600+graphics+card), [Ryzen 7 9800X3D](https://www.newegg.com/p/pl?d=Ryzen+7+9800X3D), [Radeon RX 9070 XT](https://www.newegg.com/p/pl?d=Radeon+RX+9070+XT+graphics+card), [GeForce RTX 5090](https://www.newegg.com/p/pl?d=GeForce+RTX+5090+graphics+card), [Threadripper 7960X](https://www.newegg.com/p/pl?d=Threadripper+7960X), and supporting motherboard, memory, storage, cooling, PSU, and case searches. Prices are planning figures and exclude shipping, tax, payment fees, Windows, peripherals, and assembly add-ons; re-check availability before accepting an order.
+The site advertises free local pickup in San Antonio and $99 flat insured shipping to the lower 48. For cart orders, both must also exist in the Snipcart dashboard under Store configurations → Shipping → Custom shipping methods, or checkout will not show them. Snipcart needs a business address saved before shipping can be turned on.

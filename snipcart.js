@@ -3,7 +3,9 @@
  * The public API key is safe client-side; never add a private/payment secret.
  */
 (function loadSnipcart() {
-    const publicApiKey = "MjFiNjU1MmEtYjQzNC00NDJmLWJlYjgtNzJmYjIxZGIxMmVmNjM5MjQ0NDk5MzcyNTYxMTY1";
+    // TEST key: checkout works but no real money moves. Swap in the LIVE key from
+    // Snipcart (Account > API Keys > Live) when you are ready to take real orders.
+    const publicApiKey = "OGM2MzNiMWEtZWRmZS00ZDIwLTg4ZjQtMjljZDkwNWU0MDIxNjM5MjQ0NDk5MzcyNTYxMTY1";
     const container = document.getElementById("snipcart");
     if (!container) return;
 
