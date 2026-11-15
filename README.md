@@ -11,9 +11,21 @@ Static storefront and service site for JJSPCBuilds. The site is deployable to an
 5. In the Snipcart dashboard, configure payment providers, taxes, shipping/pickup rules, order emails, and inventory before accepting orders. Adding the loader and buttons alone does not enable checkout.
 6. Add `jjspcbuilds.com` as the production domain in Snipcart's dashboard/domain settings before accepting live orders. The site uses the official Snipcart v3.7.1 settings bootstrap; if the cart remains on “Getting your cart ready,” verify that the dashboard key is the public key for this site and that the domain is enabled.
 
-Products live in the `#shop` and `#builds` sections of `index.html` and `Builds.html`. Keep the same stable IDs in both surfaces. Every sellable item must provide `data-item-price`, `data-item-url`, `data-item-description`, `data-item-image`, and `data-item-name` on its `.snipcart-add-item` button. Use `disabled` and an explicit sold-out label for unavailable inventory.
+## Homepage layout
 
-The homepage `#configurator` is intentionally quote-only. Its option prices and the `configMarkup` value live in the configurator script in `index.html`; update both the option label/price and the numeric value when market costs change. The configurator estimate applies the 20% markup and writes the selected parts into the quote form, but it does not create a Snipcart item. Keep stable Snipcart product metadata limited to the fixed catalog products.
+`index.html` is a product-first storefront. Styles are in `home.css` and scripts are in `site.js`. Gallery photos and the video are real files in `assets/gallery/`.
+
+- `#in-stock`: PCs that are built and ready to sell. To add one, copy an `<article class="product">` block, give it a new `data-item-id`, and keep `data-item-price` the same as the price shown. `data-item-max-quantity="1"` stops two people from buying the same PC. Delete the block when it sells.
+- `#built-to-order`: the four fixed tiers. Their IDs (`entry-level-gaming`, `sweet-spot-gaming`, `premium-4k`, `creator-workstation`) are also used in `Builds.html`, so keep IDs and prices the same in both.
+- Every `.snipcart-add-item` button needs `data-item-id`, `data-item-price`, `data-item-url`, `data-item-description`, `data-item-image`, and `data-item-name`.
+
+## Shipping
+
+The site advertises two options: free local pickup in San Antonio and $99 flat insured shipping to the lower 48. These must also exist in the Snipcart dashboard under Store configurations → Shipping → Custom shipping methods, or checkout will not show them. If the price changes, update the announcement bar, the hero badge, and the `#shipping` section in `index.html`.
+
+## Configurator
+
+The homepage `#custom` configurator is quote-only. Each `<option>` has a `data-price` number that the total is calculated from, so when a price changes, update both the label text and `data-price`. GPU options and the 20% `configMarkup` live in `site.js`. The estimate is written into the quote form; it does not create a Snipcart item.
 
 ## Catalog pricing assumptions
 
