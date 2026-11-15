@@ -18,7 +18,7 @@ Things to keep the same everywhere:
 - **Nav, announcement bar, and footer** are copied into each page. If you change one, change all four. The only difference between pages is which nav link has `class="active"`.
 - **Build names and prices** are on the cards in `shop.html` and in the `builds` list at the top of `site.js`. Keep both the same. The shop buttons link to `custom.html?build=starter` (or `sweet-spot`, `1440p`), which fills in the form.
 - **Shipping price and warranty** show up in the announcement bar (every page), the hero badges (`index.html`), the shipping section (`shop.html`), and the FAQ (`custom.html`).
-- **Cache:** the pages load `home.css?v=4` and `site.js?v=4`. Bump that number on every page when you change the CSS or JS, so visitors get the new version right away.
+- **Cache:** the pages load `home.css?v=5` and `site.js?v=5`. Bump that number on every page when you change the CSS or JS, so visitors get the new version right away.
 
 Old links (`Builds.html`, `Pricing.html`, `Services.html`) redirect to the new pages, and `404.html` sends any other dead link to the homepage. All forms go to Formspree.
 

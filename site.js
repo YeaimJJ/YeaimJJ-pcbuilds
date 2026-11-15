@@ -52,6 +52,13 @@ window.formspree = window.formspree || function () { (formspree.q = formspree.q 
     }
 });
 
+// ---- After a form is sent, bring the success message into view ----
+document.querySelectorAll('[data-fs-success]').forEach(box => {
+    new MutationObserver(() => {
+        if (box.hasAttribute('data-fs-active')) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).observe(box, { attributes: true, attributeFilter: ['data-fs-active'] });
+});
+
 // ---- Mobile menu ----
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
