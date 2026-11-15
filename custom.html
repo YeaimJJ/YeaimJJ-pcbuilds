@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Gaming PC | JJSPCBuilds</title>
+    <meta name="description" content="Get a gaming PC built around your budget in San Antonio, TX. Free quote within 24 hours, parts at cost plus a $100 build fee.">
+    <link rel="icon" href="assets/brand/jj-builds-logo.png?v=3">
+    <meta property="og:title" content="Custom Gaming PC | JJSPCBuilds">
+    <meta property="og:image" content="assets/brand/jj-builds-logo.png?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css?v=4">
+</head>
+<body>
+    <div class="announce">Free local pickup in San Antonio &nbsp;·&nbsp; $99 insured shipping to the lower 48 &nbsp;·&nbsp; <a href="shop.html#shipping">Details</a></div>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="index.html" aria-label="JJSPCBuilds home"><img class="brand-logo" src="assets/brand/jj-builds-logo.png?v=3" alt="JJ Builds"></a>
+            <nav aria-label="Main">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="custom.html" class="active" aria-current="page">Custom PC</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="cart-item"><button class="cart-link snipcart-checkout" type="button" aria-label="Open shopping cart">Cart (<span class="snipcart-items-count">0</span>)</button></li>
+                </ul>
+            </nav>
+            <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="wrap">
+            <div class="kicker">Custom PC</div>
+            <h1>Get a PC built around your budget</h1>
+            <p class="lead">Tell me your budget and what you play. You don't need to know anything about parts.</p>
+        </div>
+    </section>
+
+    <!-- Custom PC: steps, request form, FAQ -->
+    <section class="section" id="custom">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">How it works</div>
+                <h2>Four steps from idea to PC</h2>
+            </div>
+            <div class="card-grid steps">
+                <div class="card"><div class="step-num">1</div><h3>Tell me what you want</h3><p>Fill out the short form with your budget, your games, and the look you like.</p></div>
+                <div class="card"><div class="step-num">2</div><h3>Get your quote</h3><p>I send you a full parts list and price within 24 hours. The quote is free.</p></div>
+                <div class="card"><div class="step-num">3</div><h3>Approve and pay for parts</h3><p>Ask for changes until it's right. Once you approve, you pay for the parts and I order them.</p></div>
+                <div class="card"><div class="step-num">4</div><h3>I build and test it</h3><p>Clean cable management and a full stress test. The $100 build fee is due when you get your PC.</p></div>
+            </div>
+
+            <h2 class="form-title" id="custom-form">Request your custom build</h2>
+            <div class="split custom-split">
+                <div>
+                    <form class="form-card" id="customForm" action="https://formspree.io/f/maqldgaw" method="POST" novalidate>
+                        <input type="hidden" name="_subject" value="Custom PC Request — JJ's PC Builds">
+                        <input type="hidden" id="tierField" name="build">
+                        <p class="picked" id="pickedBuild" hidden></p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe" data-fs-field>
+                                <span class="fs-error" data-fs-error="name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-field">Email or Phone *</label>
+                                <input type="text" id="contact-field" name="contact" required placeholder="you@email.com or (210) 555-1234" data-fs-field>
+                                <span class="fs-error" data-fs-error="contact"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="use">Main use</label>
+                                <select id="use" name="use" data-fs-field>
+                                    <option value="">Select one...</option>
+                                    <option>Gaming</option>
+                                    <option>Gaming + Streaming</option>
+                                    <option>Video Editing / Creative</option>
+                                    <option>School / Work</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="look">Preferred look</label>
+                                <select id="look" name="look" data-fs-field>
+                                    <option value="">Select one...</option>
+                                    <option>RGB / Gaming</option>
+                                    <option>Clean white</option>
+                                    <option>All black</option>
+                                    <option>No preference</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget: <strong id="budgetValue">$800</strong></label>
+                            <input type="range" id="budget" name="budget" min="400" max="2500" step="50" value="800">
+                            <div class="range-ends"><span>$400</span><span>$2,500+</span></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Anything else? (optional)</label>
+                            <textarea id="notes" name="notes" placeholder="Games you play, monitor you have, parts you already own, colors you like." data-fs-field></textarea>
+                        </div>
+                        <span class="fs-error" data-fs-error style="text-align:center;margin-bottom:0.5rem;"></span>
+                        <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Send My Build Request</button>
+                        <p class="muted small" style="text-align:center;margin-top:0.8rem;">Free quote. No commitment.</p>
+                    </form>
+                    <div class="success-box" id="successMessage" data-fs-success>
+                        <h3>Request sent!</h3>
+                        <p>I'll get back to you within 24 hours with a parts list and price.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3>Common questions</h3>
+                    <details><summary>Do I need to know about PC parts?</summary><p>No. Tell me your budget and what you want to play, and I'll pick the parts and explain why.</p></details>
+                    <details><summary>How does payment work?</summary><p>The quote is free. Once you approve the parts list, you pay for the parts. The $100 build fee is due when you get your PC.</p></details>
+                    <details><summary>How long does it take?</summary><p>Usually 5-7 days once the parts arrive.</p></details>
+                    <details><summary>Do you use new or used parts?</summary><p>Both. Used parts that I've tested get you a lot more PC for the money. Your quote shows which parts are new and which are used.</p></details>
+                    <details><summary>What's the warranty?</summary><p>7 days. It covers a PC that arrives damaged or a part that fails. You pay the return shipping and I refund what you paid for the PC.</p></details>
+                    <p class="muted small" style="margin-top:1rem;">Rather talk it through? <a href="https://calendly.com/jjspcbuilds/30min" target="_blank" rel="noopener" style="color:var(--accent);">Book a free consult.</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <img class="brand-logo" src="assets/brand/jj-builds-logo.png?v=3" alt="JJ Builds">
+            <nav aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="custom.html">Custom PC</a>
+                <a href="index.html#sell">Sell Your PC</a>
+                <a href="index.html#repairs">Repairs</a>
+                <a href="shop.html#shipping">Shipping</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>Custom PCs built with passion • San Antonio, TX • Est. 2024</p>
+        </div>
+    </footer>
+
+    <div hidden id="snipcart"></div>
+    <script src="site.js?v=4"></script>
+    <script src="snipcart.js?v=4"></script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
