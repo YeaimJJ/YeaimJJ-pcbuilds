@@ -287,3 +287,8 @@ input[type="range"] { width: 100%; accent-color: var(--primary); margin-top: 0.4
 
 .product-grid.tiers { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 900px) { .product-grid.tiers { grid-template-columns: 1fr; } }
+
+/* Formspree adds data-fs-active to the success message after a form is sent */
+[data-fs-success] { display: none; }
+[data-fs-success][data-fs-active] { display: block; }
+form:has(+ [data-fs-success][data-fs-active]) { display: none; }
